@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Skill Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #4a4a4a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(bg\ \(1\).png);
+            background-size: cover;
+        }
+        .main-content {
+            background-color: #5a5a5ab6;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 900px;
+        }
+        .btn-custom {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .cat {
+            width: 280px;
+            max-width: 280px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="webringtheboom.jpg" alt="CAT" class="cat">
+            </div>
+            <div class="col-md-8">
+                <div class="container">
+                    <h3>Hi, Im <span class="text-warning">your delivery cat</span>. I feel dumb so i want you to refresh my mind.</h3>
+                    <h6> by giving me random numbers and i will either get the product of them, or get the remainder of them, or raise the first one by the 2nd, or check if the first one is equal to the 2nd one</h6>
+
+                    <label>Enter a value for a:</label>
+                    <input type="number" id="a" class="form-control">
+                    <label>Enter a value for b:</label>
+                    <input type="number" id="b" class="form-control">
+                    
+                    <br>
+                    <details>
+                        <summary>Type two numbers down and select a button!</summary>
+                        <i>Enter two numbers then find its answer by using the buttons below</i>
+                    </details>
+                    <br>
+                    <span> <h6 id="result">The Result: </h6> </span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <button class="btn btn-success btn-custom" onclick="product()">Product of a and b</button>
+                <button class="btn btn-danger btn-custom" onclick="remainder()">Get the remainder</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-warning btn-custom" onclick="power()">A raise to B</button>
+                <button class="btn btn-primary btn-custom" onclick="checkEqual()">Check if a is equal to b</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function product() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var results1 = a * b;
+            document.getElementById('result').innerHTML = 'The Result: ' + '<h1>' + results1 + '</h1>';
+        }
+
+        function remainder() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var results2 = a % b;
+            document.getElementById('result').innerHTML = 'The Result: ' + '<h1>' + results2 + '</h1>';
+        }
+
+        function power() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var results3 = a ** b;
+            document.getElementById('result').innerHTML = 'The Result: ' + '<h1>' + results3 + '</h1>';
+        }
+
+        function checkEqual() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var results4 = (a == b);
+            document.getElementById('result').innerHTML = 'The Result: ' + '<h1>' + results4 + '</h1>';
+        }
+    </script>
+</body>
+</html>
